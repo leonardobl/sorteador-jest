@@ -1,4 +1,3 @@
-import { hover } from "@testing-library/user-event/dist/hover";
 import styled, { css } from "styled-components";
 
 
@@ -15,8 +14,9 @@ export const Container = styled.div``
 
 export const Button = styled.button<ButtonProps>`
 
-${ ({bgc, color, fontSize, fontWeight}) => css`
 
+
+${ ({bgc, color, fontSize, fontWeight}) => css`
 width: max-content;
 box-shadow: 4px 4px 0px #000000;
 border-radius: 37.5px;
@@ -34,7 +34,7 @@ gap: 16px;
 ` }
 
 
-${({typeButton}) => typeButton == "DEFAULT" && css`
+${({typeButton}) => typeButton === "DEFAULT" && css`
 :hover {
  
   background-color: #4B69FD;

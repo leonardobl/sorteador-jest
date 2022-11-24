@@ -39,7 +39,7 @@ position: relative;
   width: 40px;
   height: 40px;
   position: absolute;
-  top: 20px;
+  top: 21px;
   left: 30px;
 }
 

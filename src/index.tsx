@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Input } from './components/molecules/Input';
 
 import GlobalStyles from './global/styles';
+import { Home } from './pages/home';
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />
-    <Input typeInput='MOBILE'  placeHolder='Insira os nomes dos participantes'/>
+    <Home />
   </React.StrictMode>,
   document.getElementById('root')
 );

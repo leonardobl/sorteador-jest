@@ -16,15 +16,16 @@ type ButtomProps = {
   theme: "GRAY" | "ORANGE",
   textButton: string,
   srcIcon?: string,
-  typeButton: "DEFAULT" | "MOBILE"
+  typeButton: "DEFAULT" | "MOBILE",
+  onClick?: () => void
 }
 
 
 
-export const Button = ({textButton, theme, srcIcon, typeButton}: ButtomProps) => {
+export const Button = ({textButton, theme, srcIcon, typeButton, onClick}: ButtomProps) => {
   return (
     <S.Container>
-    <S.Button bgc={colors[theme].bgc} color={colors[theme].color} fontSize={sizes[typeButton].size} fontWeight={sizes[typeButton].wigth}  typeButton={typeButton} >
+    <S.Button bgc={colors[theme].bgc} color={colors[theme].color} fontSize={sizes[typeButton].size} fontWeight={sizes[typeButton].wigth}  typeButton={typeButton} onClick={onClick} >
     {srcIcon && <S.Image src={srcIcon}  size={sizes[typeButton].iconSize} />}
     {textButton}
     </S.Button>
