@@ -24,13 +24,13 @@ export const FormInit = ({handleOnChange}: FormInitProps) => {
         <S.Title>Vamos começar!</S.Title> 
         <Input typeInput={'DEFAULT'} placeHolder={"Insira os nomes dos participantes"} handleOnChange={e => setListNames([...listNames, e])}  />
         <S.WrapperListNames>
-        {listNames.map( item => <S.ItemList key={Math.random()}>{item}</S.ItemList> )}
+          {listNames.map( item => <S.ItemList key={Math.random()}>{item}</S.ItemList> )}
         </S.WrapperListNames>
       </S.Content>
       <S.Footer>
-       <Button textButton='Iniciar brincadeira!' theme='ORANGE' srcIcon='/icons/play_circle_outline.svg' typeButton={'DEFAULT'} onClick={handleClick} />
-       <img src='/imagens/sacolas.png' />
+        <Button textButton='Iniciar brincadeira!' theme='ORANGE' srcIcon='/icons/play_circle_outline.svg' typeButton={'DEFAULT'} onClick={handleClick} />
+        <img src='/imagens/sacolas.png' />
       </S.Footer>
-      </S.Container>
+    </S.Container>
     )
   }
