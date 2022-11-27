@@ -101,6 +101,14 @@ border: 2px solid #000000;
 box-shadow: 4px 4px 0px #000000;
 
 
+
+:disabled {
+  color: #999;
+  cursor: not-allowed;
+}
+
+
+
 ${({typeInput}) => typeInput === "DEFAULT" ? css`
 border-radius: 0px 37.5px 37.5px 0px;
 ` : css`

@@ -10,14 +10,14 @@ type FormInitProps = {
 
 export const FormInit = ({handleOnChange}: FormInitProps) => {
   const [listNames, setListNames] = React.useState<string[]>([])
-
-
+  
+  
   function handleClick() {
     if(!handleOnChange) return
     handleOnChange(listNames)
   }
-
-
+  
+  
   return (
     <S.Container>
       <S.Content>
@@ -28,7 +28,7 @@ export const FormInit = ({handleOnChange}: FormInitProps) => {
         </S.WrapperListNames>
       </S.Content>
       <S.Footer>
-        <Button textButton='Iniciar brincadeira!' theme='ORANGE' srcIcon='/icons/play_circle_outline.svg' typeButton={'DEFAULT'} onClick={handleClick} />
+        <Button isDisabled={!listNames.length}  textButton='Iniciar brincadeira!' theme='ORANGE' srcIcon='/icons/play_circle_outline.svg' typeButton={'DEFAULT'} onClick={handleClick} />
         <img src='/imagens/sacolas.png' />
       </S.Footer>
     </S.Container>

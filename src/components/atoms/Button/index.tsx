@@ -1,3 +1,4 @@
+import { isDisabled } from '@testing-library/user-event/dist/utils'
 import React from 'react'
 import * as S from "./styles"
 
@@ -16,16 +17,17 @@ type ButtomProps = {
   theme: "GRAY" | "ORANGE",
   textButton: string,
   srcIcon?: string,
+  isDisabled?: boolean
   typeButton: "DEFAULT" | "MOBILE",
   onClick?: () => void
 }
 
 
 
-export const Button = ({textButton, theme, srcIcon, typeButton, onClick}: ButtomProps) => {
+export const Button = ({textButton, theme, srcIcon, typeButton, onClick, isDisabled}: ButtomProps) => {
   return (
     <S.Container>
-      <S.Button bgc={colors[theme].bgc} color={colors[theme].color} fontSize={sizes[typeButton].size} fontWeight={sizes[typeButton].wigth}  typeButton={typeButton} onClick={onClick} >
+      <S.Button disabled={isDisabled} bgc={colors[theme].bgc} color={colors[theme].color} fontSize={sizes[typeButton].size} fontWeight={sizes[typeButton].wigth}  typeButton={typeButton} onClick={onClick} >
         {srcIcon && <S.Image src={srcIcon}  size={sizes[typeButton].iconSize} />}
         {textButton}
       </S.Button>

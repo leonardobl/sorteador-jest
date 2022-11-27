@@ -14,7 +14,13 @@ export const Container = styled.div``
 
 export const Button = styled.button<ButtonProps>`
 
-
+:disabled {
+  background-color: #c4c4c4;
+  cursor: not-allowed
+}
+:disabled:hover{
+  background-color: #c4c4c4;
+}
 
 ${ ({bgc, color, fontSize, fontWeight}) => css`
 width: max-content;
