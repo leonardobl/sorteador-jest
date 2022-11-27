@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, getByRole, render, screen } from "@testing-library/react";
 import React from "react";
 import { FormInit } from ".";
 
@@ -59,5 +59,39 @@ test("deve existir um botao de Iniciar brincadeira", ()=>{
   expect(btnIniciar).toBeInTheDocument()
   
 } )
+
+
+test( "botao iniciar brincadeira deve iniciar desabilitado", () => {
+
+  render(<FormInit />)
+
+  const btnIniciarBrincadeira = screen.getByRole("button", {
+    name: /Iniciar brincadeira/
+  })
+
+  expect(btnIniciarBrincadeira).toBeDisabled()
+} )
+
+test("quando existir pelo menos um nome cadastrado o btn deve ser habilitado", ()=> {
+  render(<FormInit />)
+
+  const input = screen.getByPlaceholderText("Insira os nomes dos participantes")
+  const btnIniciarBrincadeira = screen.getByRole("button", {
+    name: /Iniciar brincadeira/
+  })
+  const btnAdicionar= screen.getByRole("button", {
+    name: /Adicionar/
+  })
+
+  fireEvent.change( input, {
+    target: {
+      value: "Leonardo Lima"
+    }
+  } )
+
+  fireEvent.click(btnAdicionar)
+
+  expect(btnIniciarBrincadeira).toBeEnabled()
+})
 
 
