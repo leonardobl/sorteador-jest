@@ -31,18 +31,16 @@ function handleInit() {
         <S.ButtonAdicionar disabled={!nome} onClick={handleAdd}>Adicionar</S.ButtonAdicionar>
       </S.Form>
 
-      <S.WrapperListNomes>
+      <S.WrapperListNomes id='wrapperListNomes'>
         {listaNomes.map( item => <S.ListNomeItem key={Math.random() + item}>{item}</S.ListNomeItem> )}
       </S.WrapperListNomes>
 
       <S.Footer>
-
         <S.ButtonIniciar disabled={!listaNomes?.length} onClick={handleInit}>
           <img src='/icons/play_circle_outline.svg'/>
           Iniciar brincadeira!
         </S.ButtonIniciar>
         <img src='/imagens/sacolas.png'/>
-  
       </S.Footer>
    
     </S.Container>
