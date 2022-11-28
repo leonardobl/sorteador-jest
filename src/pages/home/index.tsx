@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormInit } from '../../components/organisms/formInit'
+import { FormInit } from '../../components/organisms/FormInit' 
 import * as S from "./styles"
 
 export const Home = () => {
@@ -22,7 +22,7 @@ export const Home = () => {
           <img src='/imagens/participante.png' /> 
         </S.Header>
         <S.Content>
-          {!isRead ? <FormInit handleOnChange={setListNames} /> : <h1>Lima</h1>}
+          {!isRead ? <FormInit /> : <h1>Lima</h1>}
         </S.Content>
       </S.WrapperContent>
     
